@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crochet Pattern Designer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1> Crochet Pattern Designer</h1>
+            <p>Click on squares to color them and create beautiful crochet patterns!</p>
+        </header>
+
+        <div class="main-content">
+            <div class="controls-panel">
+                <div class="color-palette">
+                    <h3>Color Palette</h3>
+                    <div class="color-options">
+                        <div class="color-option active" data-color="#ffffff" style="background-color: #ffffff; border: 2px solid #333;"></div>
+                        <div class="color-option" data-color="#ff6b6b" style="background-color: #ff6b6b;"></div>
+                        <div class="color-option" data-color="#4ecdc4" style="background-color: #4ecdc4;"></div>
+                        <div class="color-option" data-color="#45b7d1" style="background-color: #45b7d1;"></div>
+                        <div class="color-option" data-color="#96ceb4" style="background-color: #96ceb4;"></div>
+                        <div class="color-option" data-color="#feca57" style="background-color: #feca57;"></div>
+                        <div class="color-option" data-color="#ff9ff3" style="background-color: #ff9ff3;"></div>
+                        <div class="color-option" data-color="#54a0ff" style="background-color: #54a0ff;"></div>
+                        <div class="color-option" data-color="#5f27cd" style="background-color: #5f27cd;"></div>
+                        <div class="color-option" data-color="#00d2d3" style="background-color: #00d2d3;"></div>
+                        <div class="color-option" data-color="#ff9f43" style="background-color: #ff9f43;"></div>
+                        <div class="color-option" data-color="#ee5a24" style="background-color: #ee5a24;"></div>
+                        <div class="color-option" data-color="#0984e3" style="background-color: #0984e3;"></div>
+                        <div class="color-option" data-color="#6c5ce7" style="background-color: #6c5ce7;"></div>
+                        <div class="color-option" data-color="#a29bfe" style="background-color: #a29bfe;"></div>
+                        <div class="color-option" data-color="#fd79a8" style="background-color: #fd79a8;"></div>
+                    </div>
+                </div>
+
+                <div class="grid-controls">
+                    <h3>Grid Settings</h3>
+                    <div class="control-group">
+                        <label for="grid-size">Grid Size:</label>
+                        <select id="grid-size">
+                            <option value="10">10x10</option>
+                            <option value="15" selected>15x15</option>
+                            <option value="20">20x20</option>
+                            <option value="25">25x25</option>
+                            <option value="30">30x30</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <button id="clear-grid" class="btn btn-secondary">Clear Grid</button>
+                        <button id="save-pattern" class="btn btn-primary">Save Pattern</button>
+                        <button id="load-pattern" class="btn btn-primary">Load Pattern</button>
+                    </div>
+                </div>
+
+                <div class="pattern-info">
+                    <h3>Pattern Info</h3>
+                    <div class="info-item">
+                        <span>Size:</span>
+                        <span id="pattern-size">15x15</span>
+                    </div>
+                    <div class="info-item">
+                        <span>Colors Used:</span>
+                        <span id="colors-count">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="design-area">
+                <div class="grid-container">
+                    <canvas id="pattern-grid" width="600" height="600"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <div class="instructions">
+            <h3>How to Use:</h3>
+            <ul>
+                <li>Select a color from the palette</li>
+                <li>Click on any square in the grid to color it</li>
+                <li>Right-click to erase (set to white)</li>
+                <li>Use the grid size dropdown to change the pattern size</li>
+                <li>Save your patterns to download them as JSON files</li>
+                <li>Load previously saved patterns</li>
+            </ul>
+        </div>
+    </div>
+
+    <input type="file" id="file-input" accept=".json" style="display: none;">
+
+    <script src="script.js"></script>
+</body>
+</html>
